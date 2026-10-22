@@ -1,26 +1,131 @@
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0B1120;
+  --bg-card: #151F32;
+  --bg-hover: #1E293B;
+
+  --color-primary: #3B82F6;
+  --color-accent: #22D3EE;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  --border-color: #29364B;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+h1, h2, h3 {
+  font-family: var(--font-space), sans-serif;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+
+.navbar{
+  width: 90%;
+  height: 70px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000CC;
+  position: fixed;
+  top: 5%;
+  border-radius: 20;
+}
+
+nav{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a{
+    margin-inline: 17px;
+    color: var(--text-secondary);
+    font-weight: normal;
+    display: inline-block;
+    transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+  }
+}
+
+nav a:hover{
+  transform: scale(1.08);
+  color: var(--text-primary);
+
+}
+
+.active-nav{
+  color: var(--color-primary);
+}
+
+.inactive-nav{
+  color: var(--text-secondary);
+}
+
+.logo{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .logo-head{
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  font-size: large;
+  font-weight: bold;
+  }
+  .logo-sub-head{
+  color: var(--text-secondary);
+  font-family: var(--font-inter), sans-serif;
+  font-size:small;
+  font-weight:lighter;
+  }
+}
+
+.resume-button{
+  height: 100%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+}
+
+
